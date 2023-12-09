@@ -26,10 +26,11 @@ driver.find_element(By.ID, "tbarouter_username").send_keys("admin")
 driver.find_element(By.ID, "tbarouter_password").send_keys("admin")
 driver.find_element(By.ID, "btnSignIn").click()
 
-print("Login Success")
+print("Setup")
+
 wd_until(wd5, EC.element_to_be_clickable((By.ID, "btnQuickSetup")))
 driver.find_element(By.ID, "btnQuickSetup").click()
-print("Setup")
+
 wd_until(wd5, EC.element_to_be_clickable((By.ID, "btnNext")))
 driver.find_element(By.ID, "btnNext").click()
 
@@ -38,7 +39,6 @@ if not driver.find_element(By.ID, "AutoConfigureAPNCheckBox").is_selected():
     driver.find_element(By.ID, "AutoConfigureAPNCheckBox").click()
 driver.find_element(By.ID, "btnNext1").click()
 
-print("Saving..")
 wd_until(wd15, EC.element_to_be_clickable((By.ID, "btnExit3")))
 print("Complete")
 driver.quit()
